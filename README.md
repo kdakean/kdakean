@@ -2,7 +2,7 @@
 Kdakean is a web application written in Go(Golang). It is a task management application.
 
 ### Feature
--
+...
 
 
 ### Installation
