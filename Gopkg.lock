@@ -15,12 +15,6 @@
 
 [[projects]]
   branch = "master"
-  name = "github.com/foolin/gin-template"
-  packages = ["."]
-  revision = "089e62d1d723b168b89e8dbb0e823228b7366358"
-
-[[projects]]
-  branch = "master"
   name = "github.com/gin-contrib/sse"
   packages = ["."]
   revision = "22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae"
@@ -91,6 +85,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "ac201acf8f3d5f5984b956f56a82f89e8dbb38726ea9c5f130effe3778cd4ba8"
+  inputs-digest = "cb77dec07c5f02b09465dc4d9d69b5e16d0a70fe8aaf4d28a29d6935d89873df"
   solver-name = "gps-cdcl"
   solver-version = 1
