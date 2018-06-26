@@ -5,9 +5,20 @@ import (
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/joho/godotenv"
+	"github.com/kdakean/kdakean/db"
 )
 
 func main() {
+	if err := godotenv.Load(); err != nil {
+		log.Fatal(err)
+	}
+
+	if err := db.InitDB(); err != nil {
+		log.Fatal(err)
+	}
+
 	s := &http.Server{
 		Addr:         ":8080",
 		Handler:      initRoutes(),
