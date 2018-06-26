@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"time"
@@ -14,6 +15,7 @@ func main() {
 		WriteTimeout: 30 * time.Second,
 	}
 
+	fmt.Println("Listening on ", "8080")
 	if err := s.ListenAndServe(); err != nil {
 		log.Fatal(err)
 	}

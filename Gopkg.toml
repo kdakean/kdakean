@@ -34,10 +34,6 @@
   version = "1.2.0"
 
 [[constraint]]
-  branch = "master"
-  name = "github.com/foolin/gin-template"
-
-[[constraint]]
   name = "github.com/nicksnyder/go-i18n"
   version = "1.10.0"
 
