@@ -24,6 +24,7 @@
 #   go-tests = true
 #   unused-packages = true
 
+required = ["bitbucket.org/liamstask/goose/cmd/goose"]
 
 [prune]
   go-tests = true
@@ -40,3 +41,15 @@
 [[constraint]]
   name = "github.com/CloudyKit/jet"
   version = "2.1.2"
+
+[[constraint]]
+  branch = "master"
+  name = "bitbucket.org/liamstask/goose"
+
+[[constraint]]
+  name = "github.com/joho/godotenv"
+  version = "1.2.0"
+
+[[constraint]]
+  name = "github.com/Masterminds/squirrel"
+  version = "1.0.0"

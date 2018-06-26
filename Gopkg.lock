@@ -3,6 +3,15 @@
 
 [[projects]]
   branch = "master"
+  name = "bitbucket.org/liamstask/goose"
+  packages = [
+    "cmd/goose",
+    "lib/goose"
+  ]
+  revision = "8488cc47d90c8a502b1c41a462a6d9cc8ee0a895"
+
+[[projects]]
+  branch = "master"
   name = "github.com/CloudyKit/fastprinter"
   packages = ["."]
   revision = "74b38d55f37af5d6c05ca11147d616b613a3420e"
@@ -12,6 +21,12 @@
   packages = ["."]
   revision = "2b064536b25ab0e9c54245f9e2cc5bd4766033fe"
   version = "v2.1.2"
+
+[[projects]]
+  name = "github.com/Masterminds/squirrel"
+  packages = ["."]
+  revision = "a6b93000bd219143c56c16e6cb1c4b91da3f224b"
+  version = "v1.0"
 
 [[projects]]
   branch = "master"
@@ -30,16 +45,70 @@
   version = "v1.2"
 
 [[projects]]
+  name = "github.com/go-sql-driver/mysql"
+  packages = ["."]
+  revision = "d523deb1b23d913de5bdada721a6071e71283618"
+  version = "v1.4.0"
+
+[[projects]]
   name = "github.com/golang/protobuf"
   packages = ["proto"]
   revision = "b4deda0973fb4c70b50d226b1af49f3da59f5265"
   version = "v1.1.0"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/jmoiron/sqlx"
+  packages = [
+    ".",
+    "reflectx"
+  ]
+  revision = "0dae4fefe7c0e190f7b5a78dac28a1c82cc8d849"
+
+[[projects]]
+  name = "github.com/joho/godotenv"
+  packages = ["."]
+  revision = "a79fa1e548e2c689c241d10173efd51e5d689d5b"
+  version = "v1.2.0"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/kylelemons/go-gypsy"
+  packages = ["yaml"]
+  revision = "08cad365cd28a7fba23bb1e57aa43c5e18ad8bb8"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/lann/builder"
+  packages = ["."]
+  revision = "1b87b36280d04fe7882d1512bf038ea2967ad534"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/lann/ps"
+  packages = ["."]
+  revision = "62de8c46ede02a7675c4c79c84883eb164cb71e3"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/lib/pq"
+  packages = [
+    ".",
+    "oid"
+  ]
+  revision = "90697d60dd844d5ef6ff15135d0203f65d2f53b8"
+
+[[projects]]
   name = "github.com/mattn/go-isatty"
   packages = ["."]
   revision = "0360b2af4f38e8d38c7fce2a9f4e702702d73a39"
   version = "v0.0.3"
+
+[[projects]]
+  name = "github.com/mattn/go-sqlite3"
+  packages = ["."]
+  revision = "25ecb14adfc7543176f7d85291ec7dba82c6f7e4"
+  version = "v1.9.0"
 
 [[projects]]
   name = "github.com/nicksnyder/go-i18n"
@@ -65,10 +134,26 @@
   version = "v1.1.1"
 
 [[projects]]
+  name = "github.com/ziutek/mymysql"
+  packages = [
+    "godrv",
+    "mysql",
+    "native"
+  ]
+  revision = "e08c2f35356576b3c3690c252fe5dca728ae9292"
+  version = "v1.5.4"
+
+[[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
   revision = "a200a19cb90b19de298170992778b1fda7217bd6"
+
+[[projects]]
+  name = "google.golang.org/appengine"
+  packages = ["cloudsql"]
+  revision = "b1f26356af11148e710935ed1ac8a7f5702c7612"
+  version = "v1.1.0"
 
 [[projects]]
   name = "gopkg.in/go-playground/validator.v8"
@@ -85,6 +170,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "cb77dec07c5f02b09465dc4d9d69b5e16d0a70fe8aaf4d28a29d6935d89873df"
+  inputs-digest = "358e7efc12dce46033831937e46c23ce9e06619f79f9c895a4597fa4fab08ada"
   solver-name = "gps-cdcl"
   solver-version = 1
