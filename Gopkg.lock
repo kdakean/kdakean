@@ -29,6 +29,12 @@
   version = "v1.0"
 
 [[projects]]
+  name = "github.com/asaskevich/govalidator"
+  packages = ["."]
+  revision = "ccb8e960c48f04d6935e72476ae4a51028f9e22f"
+  version = "v9"
+
+[[projects]]
   branch = "master"
   name = "github.com/gin-contrib/sse"
   packages = ["."]
@@ -170,6 +176,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "358e7efc12dce46033831937e46c23ce9e06619f79f9c895a4597fa4fab08ada"
+  inputs-digest = "c09c4f28beb3ad6ca320214951a32dcdd9885523017d45cc4c5d81331d62bc29"
   solver-name = "gps-cdcl"
   solver-version = 1

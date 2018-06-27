@@ -1,2 +1,26 @@
 - id: hello
   translation: "Hello, World!"
+
+- id: sign_up
+  translation: "Sign up"
+
+- id: user_name
+  translation: "Name"
+- id: user_email
+  translation: "Email"
+- id: user_fullname
+  translation: "Fullname"
+- id: user_password
+  translation: "Password"
+
+- id: errors_field_required
+  translation: "is required"
+
+- id: errors_field_minlen
+  translation: "too short"
+
+- id: errors_field_maxlen
+  translation: "too long"
+
+- id: errors_field_unique
+  translation: "already exists"

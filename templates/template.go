@@ -6,13 +6,18 @@ import (
 	"github.com/CloudyKit/jet"
 	"github.com/gin-gonic/gin"
 	"github.com/kdakean/kdakean/locale"
+	"github.com/kdakean/kdakean/util/messages"
 )
 
 var view = jet.NewHTMLSet("./templates")
 
 func CommonVariables(c *gin.Context) jet.VarMap {
 	variables := make(jet.VarMap)
+	msg := messages.GetMessages(c)
+
 	variables.Set("T", locale.GetTfunc(c))
+	variables.Set("Errors", msg.GetAllErrors())
+
 	return variables
 }
 
