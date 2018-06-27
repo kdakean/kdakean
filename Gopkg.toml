@@ -53,3 +53,7 @@ required = ["bitbucket.org/liamstask/goose/cmd/goose"]
 [[constraint]]
   name = "github.com/Masterminds/squirrel"
   version = "1.0.0"
+
+[[constraint]]
+  name = "github.com/asaskevich/govalidator"
+  version = "9.0.0"

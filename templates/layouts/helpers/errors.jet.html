@@ -1,0 +1,11 @@
+{{block errors(name="errors", type="inline")}}
+  {{if isset(Errors[name])}}
+    {{range Errors[name]}}
+      {{if type == "block"}}
+        <div class="text-center alert alert-danger">{{.}}</div>
+      {{else}}
+        <div class="invalid-feedback">{{.}}</div>
+      {{end}}
+    {{end}}
+  {{end}}
+{{end}}
