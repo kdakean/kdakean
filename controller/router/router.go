@@ -14,6 +14,8 @@ var (
 func Get() *gin.Engine {
 	once.Do(func() {
 		r = gin.Default()
+
+		r.Static("/assets", "./public/assets")
 	})
 	return r
 }
