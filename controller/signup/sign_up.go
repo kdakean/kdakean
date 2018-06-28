@@ -1,4 +1,4 @@
-package controller
+package signup
 
 import (
 	"fmt"
@@ -46,5 +46,5 @@ func PostSignUpHandler(c *gin.Context) {
 
 	fmt.Println(user)
 
-	c.Redirect(http.StatusPermanentRedirect, "/")
+	c.Redirect(http.StatusMovedPermanently, "/")
 }
