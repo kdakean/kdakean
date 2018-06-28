@@ -9,9 +9,9 @@ import (
 )
 
 type Messages struct {
-	Errors map[string][]string
-	c      *gin.Context
-	T      i18n.TranslateFunc
+	Errors map[string][]string `json:"errors"`
+	c      *gin.Context        `json:"-"`
+	T      i18n.TranslateFunc  `json:"-"`
 }
 
 const messageKey = "kdakean.messages"
