@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/justinas/nosurf"
+	_ "github.com/kdakean/kdakean/controller/board"
 	_ "github.com/kdakean/kdakean/controller/home"
 	"github.com/kdakean/kdakean/controller/router"
 	_ "github.com/kdakean/kdakean/controller/user"
