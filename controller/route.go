@@ -6,7 +6,7 @@ import (
 	"github.com/justinas/nosurf"
 	_ "github.com/kdakean/kdakean/controller/home"
 	"github.com/kdakean/kdakean/controller/router"
-	_ "github.com/kdakean/kdakean/controller/signup"
+	_ "github.com/kdakean/kdakean/controller/user"
 )
 
 var CSRFHandler *nosurf.CSRFHandler

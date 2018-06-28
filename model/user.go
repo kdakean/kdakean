@@ -6,6 +6,7 @@ import (
 	"encoding/base64"
 	"time"
 
+	sq "github.com/Masterminds/squirrel"
 	"github.com/kdakean/kdakean/db"
 	"github.com/kdakean/kdakean/errors"
 	"golang.org/x/crypto/bcrypt"
@@ -17,8 +18,8 @@ type User struct {
 	Email     string    `json:"email"`
 	Password  string    `json:"-"`
 	Fullname  string    `json:"fullname"`
-	CreatedAt time.Time `json:"created_at"`
-	UpdatedAt time.Time `json:"updated_at"`
+	CreatedAt time.Time `json:"created_at" db:"created_at"`
+	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
 }
 
 type LoginForm struct {
@@ -73,6 +74,41 @@ func CreateUser(f *RegisterForm) (*User, error) {
 		return nil, errors.ErrInternalServer
 	}
 
+	return &user, nil
+}
+
+func FindUserByLoginForm(f *LoginForm) (*User, error) {
+	cond := sq.Or{
+		sq.Eq{"name": f.Username},
+		sq.Eq{"email": f.Username},
+	}
+	sql, args, err := db.SQ.Select("id, name, password").From("users").Where(cond).ToSql()
+	if err != nil {
+		return nil, errors.ErrInternalServer
+	}
+
+	var user User
+	if err := db.DBX.QueryRowx(sql, args...).StructScan(&user); err != nil {
+		return nil, errors.ErrInvalidCredential
+	}
+	if err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(f.Password)); err != nil {
+		return nil, errors.ErrInvalidCredential
+	}
+
+	return &user, nil
+}
+
+func FindUserById(userId uint) (*User, error) {
+	sql, args, err := db.SQ.Select("id, name, email, fullname, created_at, updated_at").
+		From("users").Where(sq.Eq{"id": userId}).ToSql()
+	if err != nil {
+		return nil, errors.ErrInternalServer
+	}
+
+	var user User
+	if err := db.DBX.QueryRowx(sql, args...).StructScan(&user); err != nil {
+		return nil, errors.ErrRecordNotFound
+	}
 	return &user, nil
 }
 
