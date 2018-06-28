@@ -79,6 +79,12 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/justinas/nosurf"
+  packages = ["."]
+  revision = "7182011986c42c33f0a79fd4b07e41edc784532b"
+
+[[projects]]
+  branch = "master"
   name = "github.com/kylelemons/go-gypsy"
   packages = ["yaml"]
   revision = "08cad365cd28a7fba23bb1e57aa43c5e18ad8bb8"
@@ -151,6 +157,15 @@
 
 [[projects]]
   branch = "master"
+  name = "golang.org/x/crypto"
+  packages = [
+    "bcrypt",
+    "blowfish"
+  ]
+  revision = "a49355c7e3f8fe157a85be2f77e6e269a0f89602"
+
+[[projects]]
+  branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
   revision = "a200a19cb90b19de298170992778b1fda7217bd6"
@@ -176,6 +191,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "c09c4f28beb3ad6ca320214951a32dcdd9885523017d45cc4c5d81331d62bc29"
+  inputs-digest = "7b7a8480eeca615319a8738c21ef28bf37175e55d17dfc4217d6124f334720ea"
   solver-name = "gps-cdcl"
   solver-version = 1

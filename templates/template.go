@@ -5,6 +5,7 @@ import (
 
 	"github.com/CloudyKit/jet"
 	"github.com/gin-gonic/gin"
+	"github.com/justinas/nosurf"
 	"github.com/kdakean/kdakean/locale"
 	"github.com/kdakean/kdakean/util/messages"
 )
@@ -17,6 +18,7 @@ func CommonVariables(c *gin.Context) jet.VarMap {
 
 	variables.Set("T", locale.GetTfunc(c))
 	variables.Set("Errors", msg.GetAllErrors())
+	variables.Set("Token", nosurf.Token(c.Request))
 
 	return variables
 }
