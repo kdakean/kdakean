@@ -3,3 +3,7 @@ kdakean
 vendor/
 
 .env
+
+public/assets/
+node_modules/
+yarn-error.log

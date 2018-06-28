@@ -19,6 +19,7 @@ func CommonVariables(c *gin.Context) jet.VarMap {
 	variables.Set("T", locale.GetTfunc(c))
 	variables.Set("Errors", msg.GetAllErrors())
 	variables.Set("Token", nosurf.Token(c.Request))
+	variables.Set("assets", assets)
 
 	return variables
 }
