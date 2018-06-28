@@ -1,0 +1,22 @@
+{{extends "layouts/app"}}
+{{import "layouts/helpers/errors"}}
+{{import "layouts/helpers/csrf_token"}}
+
+{{block content_body()}}
+  <form action="/sign_in" method="post">
+    {{yield csrf_token()}}
+    {{yield errors(type="block")}}
+
+    <div class="form-group">
+      <input type="text" name="username" class="form-control" value='{{Form["Username"]}}' placeholder='{{T("user_name")}}' autofocus />
+    </div>
+
+    <div class="form-group">
+      <input type="password" name="password" class="form-control" placeholder='{{T("user_password")}}' />
+    </div>
+
+    <div class="form-group">
+      <input type="submit" value='{{T("sign_in")}}' class="btn btn-primary form-control" />
+    </div>
+  </form>
+{{end}}

@@ -1,6 +1,8 @@
 - id: hello
   translation: "Hello, World!"
 
+- id: sign_in
+  translation: "Sign in"
 - id: sign_up
   translation: "Sign up"
 
@@ -15,12 +17,22 @@
 
 - id: errors_field_required
   translation: "is required"
-
 - id: errors_field_minlen
   translation: "too short"
-
 - id: errors_field_maxlen
   translation: "too long"
-
 - id: errors_field_unique
   translation: "already exists"
+
+- id: errors_invalid_credential
+  translation: "Invalid credential"
+- id: errors_internal_server
+  translation: "500 Internal server error"
+- id: errors_session_expired
+  translation: "Session has expired"
+- id: errors_record_not_found
+  translation: "404 Record not found"
+- id: errors_already_authenticated
+  translation: "You've already signed in"
+- id: errors_unauthenticated
+  translation: "You need to signed to continue"

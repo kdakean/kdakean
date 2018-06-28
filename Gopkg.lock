@@ -63,6 +63,12 @@
   version = "v1.1.0"
 
 [[projects]]
+  name = "github.com/gorilla/securecookie"
+  packages = ["."]
+  revision = "e59506cc896acb7f7bf732d4fdf5e25f7ccd8983"
+  version = "v1.1.1"
+
+[[projects]]
   branch = "master"
   name = "github.com/jmoiron/sqlx"
   packages = [
@@ -191,6 +197,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "7b7a8480eeca615319a8738c21ef28bf37175e55d17dfc4217d6124f334720ea"
+  inputs-digest = "5120e86a086e445cc0867e6abfd271fb2ac93856add1d262cd46b162e7d74653"
   solver-name = "gps-cdcl"
   solver-version = 1

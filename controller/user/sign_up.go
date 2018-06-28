@@ -1,4 +1,4 @@
-package signup
+package userController
 
 import (
 	"fmt"
@@ -23,7 +23,7 @@ func GetSignUpHandler(c *gin.Context) {
 	}
 	vars.Set("Form", f)
 
-	templates.Render(c, "sign_up.jet.html", vars)
+	templates.Render(c, "user/sign_up.jet.html", vars)
 }
 
 func PostSignUpHandler(c *gin.Context) {
