@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/joho/godotenv"
+	"github.com/kdakean/kdakean/controller"
 	"github.com/kdakean/kdakean/db"
 )
 
@@ -21,9 +22,9 @@ func main() {
 
 	s := &http.Server{
 		Addr:         ":8080",
-		Handler:      initRoutes(),
 		ReadTimeout:  30 * time.Second,
 		WriteTimeout: 30 * time.Second,
+		Handler:      controller.CSRFHandler,
 	}
 
 	fmt.Println("Listening on ", "8080")
