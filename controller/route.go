@@ -6,6 +6,7 @@ import (
 	"github.com/justinas/nosurf"
 	_ "github.com/kdakean/kdakean/controller/board"
 	_ "github.com/kdakean/kdakean/controller/home"
+	_ "github.com/kdakean/kdakean/controller/list"
 	"github.com/kdakean/kdakean/controller/router"
 	_ "github.com/kdakean/kdakean/controller/user"
 )
