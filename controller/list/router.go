@@ -1,4 +1,4 @@
-package boardController
+package listController
 
 import (
 	"github.com/kdakean/kdakean/controller/middleware"
@@ -10,6 +10,7 @@ func init() {
 
 	g := r.Group("/api", middleware.APIAuthMiddleware)
 	{
-		g.POST("/boards", PostBoardHandler)
+		g.POST("/lists", ListCreateHandler)
+		// g.GET("/lists", ListIndexHandler)
 	}
 }
