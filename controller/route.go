@@ -1,14 +1,13 @@
 package controller
 
 import (
-	"net/http"
-
 	"github.com/justinas/nosurf"
 	_ "github.com/kdakean/kdakean/controller/board"
-	_ "github.com/kdakean/kdakean/controller/home"
+	"github.com/kdakean/kdakean/controller/home"
 	_ "github.com/kdakean/kdakean/controller/list"
 	"github.com/kdakean/kdakean/controller/router"
 	_ "github.com/kdakean/kdakean/controller/user"
+	"net/http"
 )
 
 var CSRFHandler *nosurf.CSRFHandler
@@ -21,6 +20,8 @@ func init() {
 		Path:   "/",
 		MaxAge: nosurf.MaxAge,
 	})
+
+	router.Get().NoRoute(home.HomeHandler)
 }
 
 func csrfErrHandler(res http.ResponseWriter, req *http.Request) {
