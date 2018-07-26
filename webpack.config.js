@@ -12,7 +12,7 @@ module.exports = {
   mode: App.env,
 
   entry: {
-    app: './client/javascripts/app.js'
+    app: './client/javascripts/app.jsx'
   },
 
   output: {
@@ -32,7 +32,16 @@ module.exports = {
           'postcss-loader',
           'sass-loader'
         ]
-      }
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules)/,
+        use: [
+          {
+            loader: 'babel-loader'
+          }
+        ]
+      },
     ]
   },
 

@@ -9,5 +9,5 @@ func HomeHandler(c *gin.Context) {
 	variables := templates.CommonVariables(c)
 	variables.Set("Title", "Hello")
 
-	templates.Render(c, "hello.jet.html", variables)
+	templates.Render(c, "home.jet.html", variables)
 }
