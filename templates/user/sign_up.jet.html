@@ -14,24 +14,41 @@
         </h1>
         <p class = "company-subtitle">Get started - it's free.</p>
 
-        {{yield errors(name="Name")}}
         <div class="form-group">
-          <input type="text" name="name" class="form-control" value='{{Form["Name"]}}' placeholder='{{T("user_name")}}' autofocus />
+          <input type="text"
+                 name="name"
+                 class="form-control"
+                 class="form-control {{isset(Errors["Name"]) ? "is-invalid" : ""}}"
+                 value='{{Form["Name"]}}'
+                 placeholder='{{T("user_name")}}' autofocus />
+          {{yield errors(name="Name")}}
         </div>
 
-        {{yield errors(name="Email")}}
         <div class="form-group">
-          <input type="email" name="email" class="form-control" value='{{Form["Email"]}}' placeholder='{{T("user_email")}}' />
+          <input type="email"
+                 name="email"
+                 class="form-control {{isset(Errors["Email"]) ? "is-invalid" : ""}}"
+                 value='{{Form["Email"]}}'
+                 placeholder='{{T("user_email")}}' />
+          {{yield errors(name="Email")}}
         </div>
 
-        {{yield errors(name="Fullname")}}
         <div class="form-group">
-          <input type="text" name="fullname" class="form-control" value='{{Form["Fullname"]}}' placeholder='{{T("user_fullname")}}' />
+          <input type="text"
+                 name="fullname"
+                 class="form-control {{isset(Errors["Fullname"]) ? "is-invalid" : ""}}"
+                 value='{{Form["Fullname"]}}'
+                 placeholder='{{T("user_fullname")}}' />
+          {{yield errors(name="Fullname")}}
         </div>
 
-        {{yield errors(name="Password")}}
         <div class="form-group">
-          <input type="password" name="password" class="form-control" placeholder='{{T("user_password")}}' />
+          <input type="password"
+                 name="password"
+                 class="form-control"
+                 class="form-control {{isset(Errors["Password"]) ? "is-invalid" : ""}}"
+                 placeholder='{{T("user_password")}}' />
+          {{yield errors(name="Password")}}
         </div>
 
         <div class="form-group">

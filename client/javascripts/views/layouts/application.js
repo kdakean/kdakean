@@ -3,8 +3,11 @@ import {Switch, Route} from 'react-router-dom';
 import Header                   from './../layouts/header/header';
 import Home                     from './../home/home';
 import PublicHomePage           from './../home/PublicHomePage';
+import UserProfile          from './../users/UserProfile';
+import BoardDetail          from './../boards/BoardDetail';
 
 import { routePaths } from './../_constants';
+import { PrivateRoute }         from './../commons/PrivateRoute';
 import { connect } from 'react-redux';
 
 @connect((store) => {
@@ -33,6 +36,8 @@ class Application extends Component {
       <div>
         <Header/>
         <Switch>
+          <PrivateRoute path={routePaths.USER_PROFILE} component={UserProfile} authed={isAuthenticated} />
+          <PrivateRoute path={routePaths.BOARD_DETAIL} component={BoardDetail} authed={isAuthenticated} />
           <Route exact path={routePaths.HOME} component={landingPage} />
         </Switch>
       </div>
