@@ -78,7 +78,9 @@ class Header extends React.Component {
       <nav className="navbar navbar-expand navbar-light bg-light fixed-top">
         <div className="container justify-content-between">
           <div className="d-flex order-0 w-40">
-            <a className="navbar-brand" href="#">Kdakean</a>
+            <Link to={routePaths.HOME} className="navbar-brand">
+              Kdakean
+            </Link>
           </div>
           {this._searchForm()}
           {this._rightNav()}

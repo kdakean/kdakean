@@ -7,13 +7,13 @@
     <div class="login-form-container">
       <form action="/sign_in" method="post" class="login-form">
         {{yield csrf_token()}}
-        {{yield errors(type="block")}}
         <h1 class = "company-title">
           <a href="/">
             Kdakean
           </a>
         </h1>
 
+        {{yield errors(type="block")}}
         <div class="form-group">
           <input type="text" name="username" class="form-control" value='{{Form["Username"]}}' placeholder='{{T("user_name")}}' autofocus />
         </div>

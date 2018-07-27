@@ -8,5 +8,7 @@ export const routePaths = {
   // user
   EDIT_PROFILE: '/profile/edit',
   USER_PROFILE: '/u/:username',
-  POST_DETAIL: '/p/:slug',
+
+  // BOARD_DETAIL
+  BOARD_DETAIL: '/b/:slug',
 };
