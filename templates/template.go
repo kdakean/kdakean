@@ -6,6 +6,7 @@ import (
 	"github.com/CloudyKit/jet"
 	"github.com/gin-gonic/gin"
 	"github.com/justinas/nosurf"
+	"github.com/kdakean/kdakean/controller/router"
 	"github.com/kdakean/kdakean/locale"
 	"github.com/kdakean/kdakean/util/messages"
 )
@@ -20,6 +21,8 @@ func CommonVariables(c *gin.Context) jet.VarMap {
 	variables.Set("Errors", msg.GetAllErrors())
 	variables.Set("Token", nosurf.Token(c.Request))
 	variables.Set("assets", assets)
+	user := router.GetUser(c)
+	variables.Set("current_user", user)
 
 	return variables
 }
