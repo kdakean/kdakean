@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Header                   from './../layouts/header/header';
-import Footer                   from './../layouts/footer/footer';
 import Home                     from './../home/home';
 import PublicHomePage           from './../home/PublicHomePage';
 
 import { routePaths } from './../_constants';
 import { connect } from 'react-redux';
 
+@connect((store) => {
+  return {
+    ...store.authentication
+  };
+}, {})
 class Application extends Component {
   componentWillMount() {
   }
@@ -17,6 +21,7 @@ class Application extends Component {
 
   render() {
     const { isAuthenticated } = this.props;
+    console.log(isAuthenticated);
     let landingPage = '';
     if(isAuthenticated) {
       landingPage = Home;
@@ -30,7 +35,6 @@ class Application extends Component {
         <Switch>
           <Route exact path={routePaths.HOME} component={landingPage} />
         </Switch>
-        <Footer/>
       </div>
     );
   }

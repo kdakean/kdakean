@@ -22,6 +22,13 @@ type User struct {
 	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
 }
 
+type UserSimple struct {
+	Id       uint   `json:"id"`
+	Name     string `json:"name"`
+	Email    string `json:"email"`
+	Fullname string `json:"fullname"`
+}
+
 type LoginForm struct {
 	Username string `form:"username"`
 	Password string `form:"password"`

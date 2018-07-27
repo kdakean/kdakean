@@ -7,7 +7,9 @@
   </head>
   <body>
     {{yield content_body()}}
-
+    <script>
+      window.currentUser = {{writeJson(current_user)}};
+    </script>
     <script type="text/javascript" src='{{ assets("app.js") }}'></script>
   </body>
 </html>
