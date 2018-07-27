@@ -1,5 +1,6 @@
 import 'bootstrap';
 import '../stylesheets/app.scss';
+import './config/initializer';
 import React, {
   Component
 }                               from 'react';
@@ -15,6 +16,7 @@ import configureStore           from './redux/store/configureStore';
 import Page404                  from './views/errors/page_404';
 import Page500                  from './views/errors/page_500';
 import Application              from './views/layouts/application';
+
 
 const store           = configureStore();
 import { history } from './redux/_helpers';

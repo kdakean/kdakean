@@ -3,31 +3,42 @@
 {{import "layouts/helpers/csrf_token"}}
 
 {{block content_body()}}
-  <form action="/sign_up" method="post">
-    {{yield csrf_token()}}
+  <div class="container register-page">
+    <div class="register-form-container">
+      <form action="/sign_up" method="post" class="register-form">
+        {{yield csrf_token()}}
+        <h1 class = "company-title">
+          <a href="/">
+            Kdakean
+          </a>
+        </h1>
+        <p class = "company-subtitle">Get started - it's free.</p>
 
-    {{yield errors(name="Name")}}
-    <div class="form-group">
-      <input type="text" name="name" class="form-control" value='{{Form["Name"]}}' placeholder='{{T("user_name")}}' autofocus />
-    </div>
+        {{yield errors(name="Name")}}
+        <div class="form-group">
+          <input type="text" name="name" class="form-control" value='{{Form["Name"]}}' placeholder='{{T("user_name")}}' autofocus />
+        </div>
 
-    {{yield errors(name="Email")}}
-    <div class="form-group">
-      <input type="email" name="email" class="form-control" value='{{Form["Email"]}}' placeholder='{{T("user_email")}}' />
-    </div>
+        {{yield errors(name="Email")}}
+        <div class="form-group">
+          <input type="email" name="email" class="form-control" value='{{Form["Email"]}}' placeholder='{{T("user_email")}}' />
+        </div>
 
-    {{yield errors(name="Fullname")}}
-    <div class="form-group">
-      <input type="text" name="fullname" class="form-control" value='{{Form["Fullname"]}}' placeholder='{{T("user_fullname")}}' />
-    </div>
+        {{yield errors(name="Fullname")}}
+        <div class="form-group">
+          <input type="text" name="fullname" class="form-control" value='{{Form["Fullname"]}}' placeholder='{{T("user_fullname")}}' />
+        </div>
 
-    {{yield errors(name="Password")}}
-    <div class="form-group">
-      <input type="password" name="password" class="form-control" placeholder='{{T("user_password")}}' />
-    </div>
+        {{yield errors(name="Password")}}
+        <div class="form-group">
+          <input type="password" name="password" class="form-control" placeholder='{{T("user_password")}}' />
+        </div>
 
-    <div class="form-group">
-      <input type="submit" value='{{T("sign_up")}}' class="btn btn-primary form-control" />
+        <div class="form-group">
+          <input type="submit" value='{{T("sign_up")}}' class="btn btn-primary form-control" />
+        </div>
+        <p class = "account-message">Already registered? <a href="/sign_in">Sign In</a></p>
+      </form>
     </div>
-  </form>
+  </div>
 {{end}}
