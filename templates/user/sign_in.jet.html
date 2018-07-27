@@ -3,20 +3,30 @@
 {{import "layouts/helpers/csrf_token"}}
 
 {{block content_body()}}
-  <form action="/sign_in" method="post">
-    {{yield csrf_token()}}
-    {{yield errors(type="block")}}
+  <div class="container login-page">
+    <div class="login-form-container">
+      <form action="/sign_in" method="post" class="login-form">
+        {{yield csrf_token()}}
+        {{yield errors(type="block")}}
+        <h1 class = "company-title">
+          <a href="/">
+            Kdakean
+          </a>
+        </h1>
 
-    <div class="form-group">
-      <input type="text" name="username" class="form-control" value='{{Form["Username"]}}' placeholder='{{T("user_name")}}' autofocus />
-    </div>
+        <div class="form-group">
+          <input type="text" name="username" class="form-control" value='{{Form["Username"]}}' placeholder='{{T("user_name")}}' autofocus />
+        </div>
 
-    <div class="form-group">
-      <input type="password" name="password" class="form-control" placeholder='{{T("user_password")}}' />
-    </div>
+        <div class="form-group">
+          <input type="password" name="password" class="form-control" placeholder='{{T("user_password")}}' />
+        </div>
 
-    <div class="form-group">
-      <input type="submit" value='{{T("sign_in")}}' class="btn btn-primary form-control" />
+        <div class="form-group">
+          <input type="submit" value='{{T("sign_in")}}' class="btn btn-primary form-control" />
+        </div>
+        <p class="account-message">Not registered?  <a href="/sign_up">Create an account</a></p>
+      </form>
     </div>
-  </form>
+  </div>
 {{end}}

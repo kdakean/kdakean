@@ -1,5 +1,6 @@
 import 'bootstrap';
 import '../stylesheets/app.scss';
+import './config/initializer';
 import React, {
   Component
 }                               from 'react';

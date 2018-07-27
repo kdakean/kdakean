@@ -1,35 +1,87 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { routePaths } from './../../_constants';
+import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+@connect((store) => {
+  return {
+    ...store.authentication
+  };
+}, { })
 class Header extends React.Component {
+  _rightNav() {
+    const { isAuthenticated } = this.props;
+
+    return(
+      <div className="order-last w-40">
+        {isAuthenticated ? this._userNav() : this._signNav()}
+      </div>
+    )
+  }
+
+  _userNav() {
+    return(
+      <ul className="navbar-nav mr-auto mt-2 mt-lg-0 justify-content-end">
+        <li className="nav-item">
+          <a className="nav-link" href="#">
+            <FontAwesomeIcon icon="bell"  size="lg" />
+          </a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="#">
+            <FontAwesomeIcon icon="user" size="lg" />
+          </a>
+        </li>
+      </ul>
+    )
+  }
+
+  _signNav() {
+    return(
+      <ul className="navbar-nav mr-auto mt-2 mt-lg-0 justify-content-end">
+        <li className="nav-item">
+          <a className="nav-link" href="/sign_up">
+            <FontAwesomeIcon icon="user-plus" />
+            <span className="pl-1">Register</span>
+          </a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/sign_in">
+            <FontAwesomeIcon icon="sign-in-alt" />
+            <span className="pl-1">
+              Login
+            </span>
+          </a>
+        </li>
+      </ul>
+    )
+  }
+
+  _searchForm() {
+    const { isAuthenticated } = this.props;
+    if(!isAuthenticated)
+      return(<span></span>)
+
+    return(
+      <div className="mt-1 text-right order-2 w-20 d-none d-sm-block">
+        <form className="form-inline my-2 my-lg-0">
+          <input className="form-control mr-sm-2" type="search" />
+        </form>
+      </div>
+    )
+
+  }
+
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a className="navbar-brand" href="#">Navbar w/ text</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarText">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Features</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Pricing</a>
-            </li>
-          </ul>
-          <form className="form-inline">
-            <div className="input-group">
-              <input className="form-control" type="search"/>
-              <div className="input-group-append">
-                <button className="btn btn-success" type="submit">Search</button>
-              </div>
-            </div>
-          </form>
+      <nav className="navbar navbar-expand navbar-light bg-light fixed-top">
+        <div className="container justify-content-between">
+          <div className="d-flex order-0 w-40">
+            <a className="navbar-brand" href="#">Kdakean</a>
+          </div>
+          {this._searchForm()}
+          {this._rightNav()}
         </div>
       </nav>
     );
