@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
-import Header                   from './../layouts/header/header';
-import Home                     from './../home/home';
-import PublicHomePage           from './../home/PublicHomePage';
-import UserProfile          from './../users/UserProfile';
-import BoardDetail          from './../boards/BoardDetail';
+import Header                   from './../layouts/header/header.jsx';
+import Home                     from './../home/home.jsx';
+import PublicHomePage           from './../home/PublicHomePage.jsx';
+import UserProfile          from './../users/UserProfile.jsx';
+import BoardDetail          from './../boards/BoardDetail.jsx';
 
 import { routePaths } from './../_constants';
 import { PrivateRoute }         from './../commons/PrivateRoute';

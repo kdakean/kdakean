@@ -25,6 +25,11 @@ class Header extends React.Component {
       <ul className="navbar-nav mr-auto mt-2 mt-lg-0 justify-content-end">
         <li className="nav-item">
           <a className="nav-link" href="#">
+            <FontAwesomeIcon icon="plus"  size="lg" />
+          </a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="#">
             <FontAwesomeIcon icon="bell"  size="lg" />
           </a>
         </li>
