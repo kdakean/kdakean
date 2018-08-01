@@ -13,9 +13,9 @@ import {
 import ReactDOM from 'react-dom';
 import { Provider }             from 'react-redux';
 import configureStore           from './redux/store/configureStore';
-import Page404                  from './views/errors/page_404';
-import Page500                  from './views/errors/page_500';
-import Application              from './views/layouts/application';
+import Page404                  from './views/errors/page_404.jsx';
+import Page500                  from './views/errors/page_500.jsx';
+import Application              from './views/layouts/application.jsx';
 
 const store           = configureStore();
 import { history } from './redux/_helpers';
