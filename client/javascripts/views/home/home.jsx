@@ -1,8 +1,18 @@
+import { connect } from 'react-redux';
 import React, {Component} from 'react';
 import { Row, Col } from 'reactstrap';
 import Board               from './../boards/Board.jsx';
+import { fetchBoards } from './../../redux/actions/board.actions.js';
 
-class PublicHomePage extends Component {
+@connect((store) => {
+  return {
+    ...store.boardReducers
+  };
+}, { fetchBoards })
+class Home extends Component {
+  componentWillMount() {
+    this.props.fetchBoards();
+  }
 
   render() {
     return (
@@ -17,4 +27,4 @@ class PublicHomePage extends Component {
   }
 }
 
-export default PublicHomePage;
+export default Home;
