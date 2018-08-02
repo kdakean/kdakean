@@ -3,6 +3,10 @@ import React, {Component} from 'react';
 import { Row, Col } from 'reactstrap';
 import Board               from './../boards/Board.jsx';
 import { fetchBoards } from './../../redux/actions/board.actions.js';
+import Masonry from 'react-masonry-component';
+const masonryOptions = {
+  transitionDuration: 0
+};
 
 @connect((store) => {
   return {
@@ -15,7 +19,6 @@ class Home extends Component {
   }
 
   render() {
-    console.log(this.props.boardsList);
     const {boardsList} = this.props;
     const boardsEl = boardsList.map(board =>
       <Col xs="12" sm="6" md="4" lg="3" key={board.id}>
@@ -25,9 +28,11 @@ class Home extends Component {
 
     return (
       <div className="container pt-3">
-        <Row>
+        <Masonry
+          className={'row'}
+          options={masonryOptions}>
           {boardsEl}
-        </Row>
+        </Masonry>
       </div>
     );
   }

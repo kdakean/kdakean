@@ -5,16 +5,19 @@ import Home                     from './../home/home.jsx';
 import PublicHomePage           from './../home/PublicHomePage.jsx';
 import UserProfile          from './../users/UserProfile.jsx';
 import BoardDetail          from './../boards/BoardDetail.jsx';
+import ModalBoard           from './../boards/ModalBoard.jsx';
 
 import { routePaths } from './../_constants';
 import { PrivateRoute }         from './../commons/PrivateRoute';
 import { connect } from 'react-redux';
+import { toggleModalBoard } from './../../redux/actions/modal.actions.js';
 
 @connect((store) => {
   return {
-    ...store.authentication
+    ...store.authentication,
+    ...store.modalReducers
   };
-}, {})
+}, {toggleModalBoard})
 class Application extends Component {
   componentWillMount() {
   }
@@ -22,9 +25,13 @@ class Application extends Component {
   componentWillUnMount() {
   }
 
+  toggleModalBoard = () => {
+    this.props.toggleModalBoard()
+  }
+
   render() {
-    const { isAuthenticated } = this.props;
-    console.log(isAuthenticated);
+    const { isAuthenticated, modalBoardOpen } = this.props;
+    console.log(modalBoardOpen);
     let landingPage = '';
     if(isAuthenticated) {
       landingPage = Home;
@@ -40,6 +47,7 @@ class Application extends Component {
           <PrivateRoute path={routePaths.BOARD_DETAIL} component={BoardDetail} authed={isAuthenticated} />
           <Route exact path={routePaths.HOME} component={landingPage} />
         </Switch>
+        <ModalBoard isOpen={modalBoardOpen} toggle={this.toggleModalBoard} />
       </div>
     );
   }

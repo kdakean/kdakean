@@ -8,9 +8,10 @@ export function fetchBoards(options) {
         {
           id: 123,
           name: "-1 Kdakean",
+          slug: "slug-1",
           description: "This is the description of kdakean.",
           total_tasks: 200,
-          created_at: "2018-07-01 00:10:10",
+          created_at: "2017-12-23T03:46:36.000Z",
           owner: {
             id: 1234,
             name: "User Name",
@@ -20,9 +21,10 @@ export function fetchBoards(options) {
         {
           id: 12,
           name: "0 Kdakean name very long long long long name",
+          slug: "slug-1",
           description: "This is the description description description description sdf sdfsdf sdfsdf sfsd of kdakean.",
           total_tasks: 200,
-          created_at: "2018-07-01 00:10:10 +0000",
+          created_at: "2017-12-23T03:46:36.000Z",
           owner: {
             id: 1234,
             name: "User Name",
@@ -32,9 +34,10 @@ export function fetchBoards(options) {
         {
           id: 1,
           name: "1 Kdakean name very long long long long name",
+          slug: "slug-1",
           description: "This is the description description description description sdf sdfsdf sdfsdf sfsd of kdakean.",
           total_tasks: 200,
-          created_at: "2018-07-01 00:10:10 +0000",
+          created_at: "2017-12-23T03:46:36.000Z",
           owner: {
             id: 1234,
             name: "User Name",
@@ -44,9 +47,10 @@ export function fetchBoards(options) {
         {
           id: 2,
           name: "2 Kdakean name",
+          slug: "slug-1",
           description: "",
           total_tasks: 200,
-          created_at: "2018-07-01 00:10:10 +0000",
+          created_at: "2017-12-23T03:46:36.000Z",
           owner: {
             id: 1234,
             name: "User Name",
@@ -56,9 +60,10 @@ export function fetchBoards(options) {
         {
           id: 3,
           name: "3 Kdakean name very long",
+          slug: "slug-1",
           description: "This is the .",
           total_tasks: 200,
-          created_at: "2018-07-01 00:10:10 +0000",
+          created_at: "2017-12-23T03:46:36.000Z",
           owner: {
             id: 1234,
             name: "User Name",
@@ -68,9 +73,10 @@ export function fetchBoards(options) {
         {
           id: 4,
           name: "4 Kdakean name very long long long long name",
+          slug: "slug-1",
           description: "This is the description description description.",
           total_tasks: 200,
-          created_at: "2018-07-01 00:10:10 +0000",
+          created_at: "2017-12-23T03:46:36.000Z",
           owner: {
             id: 1234,
             name: "User Name",
@@ -80,9 +86,10 @@ export function fetchBoards(options) {
         {
           id: 5,
           name: "5 Kdakean name very long long long long name",
+          slug: "slug-1",
           description: "This is the description.",
           total_tasks: 200,
-          created_at: "2018-07-01 00:10:10 +0000",
+          created_at: "2017-12-23T03:46:36.000Z",
           owner: {
             id: 1234,
             name: "User Name",
@@ -92,9 +99,10 @@ export function fetchBoards(options) {
         {
           id: 6,
           name: "6 Kdakean name very long long long long name sure it so long long long long go go",
+          slug: "slug-1",
           description: "",
           total_tasks: 200,
-          created_at: "2018-07-01 00:10:10 +0000",
+          created_at: "2017-12-23T03:46:36.000Z",
           owner: {
             id: 1234,
             name: "User Name",

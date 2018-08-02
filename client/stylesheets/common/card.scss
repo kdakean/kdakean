@@ -1,8 +1,8 @@
-.card {
+.card.board {
   display: inline-block;
   position: relative;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   border-radius: 6px;
   color: rgba(0, 0, 0, 0.87);
   background: #fff;
@@ -12,6 +12,13 @@
   }
   .card-caption {
     font-weight: 700;
+    font-size: 18px;
+  }
+  .card-caption, .card-description {
+    a, a:hover {
+      color: rgba(0, 0, 0, 0.87);
+      text-decoration: none;
+    }
   }
   .card-footer .stats {
     position: relative;

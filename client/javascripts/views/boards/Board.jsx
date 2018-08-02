@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Card, CardText, CardBody,
   CardTitle, CardFooter } from 'reactstrap';
 import { Dropdown, DropdownMenu, DropdownToggle, DropdownItem } from 'reactstrap';
+import {Link} from 'react-router-dom';
+import Moment from 'react-moment';
 
 class Board extends Component {
   constructor(props) {
@@ -53,14 +55,18 @@ class Board extends Component {
     const {board} = this.props;
 
     return (
-          <Card>
+          <Card className="board">
             <CardBody className="table">
               {this.dropdownOptions()}
-              <CardTitle className="card-caption">
-                {board.name}
-              </CardTitle>
-              <CardText>
-                {board.description}
+                <CardTitle className="card-caption">
+                  <Link to={`/k/${board.slug}`} className="">
+                    {board.name}
+                  </Link>
+                </CardTitle>
+              <CardText className="card-description">
+                <Link to={`/k/${board.slug}`} className="">
+                  {board.description}
+                </Link>
               </CardText>
             </CardBody>
             <CardFooter>
@@ -74,7 +80,7 @@ class Board extends Component {
                 <div className="stats">
                   <FontAwesomeIcon icon="clock" />
                   <span className="pl-1">
-                    {board.created_at}
+                    <Moment locale="km" format="DD/MMM/YYYY">{board.created_at}</Moment>
                   </span>
                 </div>
               </div>
