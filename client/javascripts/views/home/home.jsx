@@ -15,12 +15,18 @@ class Home extends Component {
   }
 
   render() {
+    console.log(this.props.boardsList);
+    const {boardsList} = this.props;
+    const boardsEl = boardsList.map(board =>
+      <Col xs="12" sm="6" md="4" lg="3" key={board.id}>
+        <Board board={board} key={board.id}></Board>
+      </Col>
+    )
+
     return (
       <div className="container pt-3">
         <Row>
-          <Col xs="12" sm="6" md="4" lg="3">
-            <Board></Board>
-          </Col>
+          {boardsEl}
         </Row>
       </div>
     );

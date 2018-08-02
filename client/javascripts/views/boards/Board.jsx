@@ -50,24 +50,32 @@ class Board extends Component {
   }
 
   render() {
+    const {board} = this.props;
+
     return (
           <Card>
             <CardBody className="table">
               {this.dropdownOptions()}
-              <CardTitle className="card-caption">Card title kokok koko momo</CardTitle>
-              <CardText>Some quick example text to build on the card title.</CardText>
+              <CardTitle className="card-caption">
+                {board.name}
+              </CardTitle>
+              <CardText>
+                {board.description}
+              </CardText>
             </CardBody>
             <CardFooter>
               <div className="d-flex justify-content-between">
                 <div className="stats">
                   <FontAwesomeIcon icon="tasks" />
                   <span className="pl-1">
-                    123
+                    {board.total_tasks}
                   </span>
                 </div>
                 <div className="stats">
                   <FontAwesomeIcon icon="clock" />
-                  <span className="pl-1">21/02/2018</span>
+                  <span className="pl-1">
+                    {board.created_at}
+                  </span>
                 </div>
               </div>
             </CardFooter>
