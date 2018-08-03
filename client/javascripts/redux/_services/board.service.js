@@ -23,7 +23,7 @@ function createBoard(boardParams) {
 }
 
 function updateBoard(boardParams) {
-  return axios.put(API_BASE + '/boards/' + boardParams.id,
+  return axios.put(API_BASE + '/boards/' + boardParams.slug,
                     boardParams)
 }
 

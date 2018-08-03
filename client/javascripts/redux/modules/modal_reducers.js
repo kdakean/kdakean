@@ -23,7 +23,8 @@ export default function reducer(state={
         }
       }
       case (modalConstants.MODAL_BOARD_TOGGLE): {
-        const board = action.payload;
+        const {board} = action.payload;
+        console.log(board)
         return {
           ...state,
           modalBoardOpen: !state.modalBoardOpen,

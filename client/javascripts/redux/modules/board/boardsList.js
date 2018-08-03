@@ -9,7 +9,8 @@ export default function reducer(state=[], action) {
 
       case (boardConstants.UPDATE_BOARDS_SUCCESS): {
         const {board} = action.payload;
-        return boards.map(b => {
+        console.log(board)
+        return state.map(b => {
           if(board.id === b.id) {
             return {
               ...b,

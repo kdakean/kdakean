@@ -30,10 +30,12 @@ class Board extends Component {
   toggleModalBoard = (event) => {
     event.preventDefault();
     const {board} = this.props;
-    this.props.toggleModalBoard(board.id);
+    this.props.toggleModalBoard(board.slug);
   }
 
   dropdownOptions() {
+    const {Owner} = this.props.board;
+
     return(
       <Dropdown isOpen={this.state.dropdownOpen}
                 toggle={this.toggle}
@@ -43,20 +45,24 @@ class Board extends Component {
         >
           <FontAwesomeIcon icon="ellipsis-h" />
         </DropdownToggle>
-        <DropdownMenu>
-          <DropdownItem onClick={this.toggleModalBoard}>
+        <DropdownMenu className="m-0 p-0">
+          <DropdownItem onClick={this.toggleModalBoard} className="btn-sm">
             <FontAwesomeIcon icon="edit" />
             <span className="pl-1">
               Edit
             </span>
           </DropdownItem>
-          <DropdownItem divider/>
-          <DropdownItem className="text-danger">
-            <FontAwesomeIcon icon="trash-alt" />
-            <span className="pl-1">
-              Delete
-            </span>
-          </DropdownItem>
+          {currentUser.id == Owner.id && <DropdownItem divider className="m-0"/>}
+
+          {
+            currentUser.id == Owner.id &&
+            <DropdownItem className="text-danger btn-sm">
+              <FontAwesomeIcon icon="trash-alt" />
+              <span className="pl-1">
+                Delete
+              </span>
+            </DropdownItem>
+          }
         </DropdownMenu>
       </Dropdown>
     )

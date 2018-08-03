@@ -5,13 +5,17 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/kdakean/kdakean/controller/router"
+	"github.com/kdakean/kdakean/model"
 )
 
-func BoardsListHandler(c *gin.Context) {
+func UpdateBoardHandler(c *gin.Context) {
+	var b model.Board
+	c.Bind(&b)
+	b.Slug = c.Param("slug")
 	user := router.GetUser(c)
-	boards := user.GetBoardsList()
+	board, _ := user.UpdateBoard(&b)
 
 	c.JSON(http.StatusCreated, gin.H{
-		"boards": boards,
+		"board": board,
 	})
 }

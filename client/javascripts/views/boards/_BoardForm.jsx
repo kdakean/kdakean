@@ -13,7 +13,7 @@ let BoardForm = props => {
         <div className="col-12 mb-3">
           <h1 className="text-center">
             {
-              initialValues.id ? 'Edit Board' : 'New Board'
+              (initialValues && initialValues.id) ? 'Edit Board' : 'New Board'
             }
           </h1>
         </div>

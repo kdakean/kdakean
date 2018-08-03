@@ -7,11 +7,10 @@ import (
 	"github.com/kdakean/kdakean/controller/router"
 )
 
-func BoardsListHandler(c *gin.Context) {
+func GetBoardHandler(c *gin.Context) {
 	user := router.GetUser(c)
-	boards := user.GetBoardsList()
-
+	board := user.GetBoard(c.Param("slug"))
 	c.JSON(http.StatusCreated, gin.H{
-		"boards": boards,
+		"board": board,
 	})
 }
