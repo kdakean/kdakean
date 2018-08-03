@@ -10,5 +10,5 @@ export const routePaths = {
   USER_PROFILE: '/u/:username',
 
   // BOARD_DETAIL
-  BOARD_DETAIL: '/b/:slug',
+  BOARD_DETAIL: '/k/:slug',
 };

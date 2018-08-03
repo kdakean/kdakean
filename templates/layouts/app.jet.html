@@ -9,6 +9,7 @@
     {{yield content_body()}}
     <script>
       window.currentUser = {{writeJson(current_user)}};
+      window.API_BASE = window.location.origin + "/api";
     </script>
     <script type="text/javascript" src='{{ assets("app.js") }}'></script>
   </body>

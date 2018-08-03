@@ -3,13 +3,18 @@ import {Link} from 'react-router-dom';
 import { routePaths } from './../../_constants';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { toggleModalBoard } from './../../../redux/actions/modal.actions.js';
 
 @connect((store) => {
   return {
     ...store.authentication
   };
-}, { })
+}, {toggleModalBoard})
 class Header extends React.Component {
+  toggleModalBoard = (event) => {
+    event.preventDefault();
+    this.props.toggleModalBoard(null)
+  }
   _rightNav() {
     const { isAuthenticated } = this.props;
 
@@ -22,9 +27,9 @@ class Header extends React.Component {
 
   _userNav() {
     return(
-      <ul className="navbar-nav mr-auto mt-2 mt-lg-0 justify-content-end">
+      <ul className="navbar-nav mr-auto mt-0 justify-content-end">
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <a className="nav-link" href="#" onClick={this.toggleModalBoard}>
             <FontAwesomeIcon icon="plus"  size="lg" />
           </a>
         </li>
@@ -44,7 +49,7 @@ class Header extends React.Component {
 
   _signNav() {
     return(
-      <ul className="navbar-nav mr-auto mt-2 mt-lg-0 justify-content-end">
+      <ul className="navbar-nav mr-auto mt-0 justify-content-end">
         <li className="nav-item">
           <a className="nav-link" href="/sign_up">
             <FontAwesomeIcon icon="user-plus" />
@@ -69,9 +74,9 @@ class Header extends React.Component {
       return(<span></span>)
 
     return(
-      <div className="mt-1 text-right order-2 w-20 d-none d-sm-block">
-        <form className="form-inline my-2 my-lg-0">
-          <input className="form-control mr-sm-2" type="search" />
+      <div className="text-right order-2 w-20 d-none d-sm-block">
+        <form className="form-inline my-0">
+          <input className="form-control form-control-sm mr-sm-2" type="search" />
         </form>
       </div>
     )

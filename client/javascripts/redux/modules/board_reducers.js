@@ -1,5 +1,5 @@
-import postsList from './board/boardsList';
-import postsDetail from './board/boardDetail';
+import boardsList from './board/boardsList';
+import boardDetail from './board/boardDetail';
 
 export default function reducer(state={
     boardsList: [],
@@ -7,7 +7,6 @@ export default function reducer(state={
   }, action) {
     return {
       ...state,
-      boardsList: boardsList(state, action),
-      boardDetail: boardDetail(state, action),
+      boardsList: boardsList(state.boardsList, action),
     }
 };
