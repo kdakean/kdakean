@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 
 class BoardDetail extends Component {
-
   render() {
     const {match} = this.props;
     return (

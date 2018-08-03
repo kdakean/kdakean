@@ -5,7 +5,12 @@ import { Card, CardText, CardBody,
 import { Dropdown, DropdownMenu, DropdownToggle, DropdownItem } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import Moment from 'react-moment';
+import { connect } from 'react-redux';
+import { toggleModalBoard } from './../../redux/actions/modal.actions.js';
 
+@connect((store) => {
+  return {};
+}, {toggleModalBoard})
 class Board extends Component {
   constructor(props) {
     super(props);
@@ -22,6 +27,12 @@ class Board extends Component {
     });
   }
 
+  toggleModalBoard = (event) => {
+    event.preventDefault();
+    const {board} = this.props;
+    this.props.toggleModalBoard(board.id);
+  }
+
   dropdownOptions() {
     return(
       <Dropdown isOpen={this.state.dropdownOpen}
@@ -33,7 +44,7 @@ class Board extends Component {
           <FontAwesomeIcon icon="ellipsis-h" />
         </DropdownToggle>
         <DropdownMenu>
-          <DropdownItem>
+          <DropdownItem onClick={this.toggleModalBoard}>
             <FontAwesomeIcon icon="edit" />
             <span className="pl-1">
               Edit

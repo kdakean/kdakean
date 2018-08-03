@@ -13,7 +13,7 @@ import { toggleModalBoard } from './../../../redux/actions/modal.actions.js';
 class Header extends React.Component {
   toggleModalBoard = (event) => {
     event.preventDefault();
-    this.props.toggleModalBoard()
+    this.props.toggleModalBoard(null)
   }
   _rightNav() {
     const { isAuthenticated } = this.props;

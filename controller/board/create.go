@@ -7,11 +7,14 @@ import (
 	"github.com/kdakean/kdakean/model"
 	"github.com/kdakean/kdakean/util/messages"
 	"github.com/kdakean/kdakean/util/validator"
+	"github.com/kdakean/kdakean/controller/router"
 )
 
 func PostBoardHandler(c *gin.Context) {
 	var b model.Board
 	c.Bind(&b)
+	user := router.GetUser(c);
+	b.UserId = user.Id
 
 	msg := messages.GetMessages(c)
 	if err := validator.Validate(&b, msg); err != nil {

@@ -54,11 +54,16 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
+    "react-textarea-autosize": "^7.0.4",
+    "react-widgets": "^4.4.3",
+    "react-widgets-moment": "^4.0.19",
     "reactjs": "^1.0.0",
     "reactstrap": "^6.3.1",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.5",
+    "redux-form": "^7.4.2",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "url-loader": "^1.0.1"
   }
 }
