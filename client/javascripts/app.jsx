@@ -16,6 +16,7 @@ import configureStore           from './redux/store/configureStore';
 import Page404                  from './views/errors/page_404.jsx';
 import Page500                  from './views/errors/page_500.jsx';
 import Application              from './views/layouts/application.jsx';
+import ReduxSweetAlert from 'react-redux-sweetalert';
 
 const store           = configureStore();
 import { history } from './redux/_helpers';
@@ -31,6 +32,7 @@ class Root extends Component {
               <Route exact path="/errors/500" name="Page 500" component={Page500}/>
               <Route path="/" name="Application" component={Application} />
             </Switch>
+            <ReduxSweetAlert />
           </div>
         </Router>
       </Provider>

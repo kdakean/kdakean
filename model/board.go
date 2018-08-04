@@ -21,12 +21,13 @@ type Board struct {
 }
 
 type BoardJSON struct {
-	Id          uint      `json:"id"`
-	Name        string    `json:"name"`
-	Description string    `json:"description"`
-	Slug        string    `json:"slug"`
+	Id          uint      `json:"id" db:"id"`
+	Name        string    `json:"name" db:"name"`
+	Description string    `json:"description" db:"description"`
+	Slug        string    `json:"slug" db:"slug"`
 	CreatedAt   time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt   time.Time `json:"updated_at" db:"updated_at"`
+	TasksCount  int       `json:"tasks_count" db:"tasks_count"`
 	UserId      uint      `json:"-" db:"user_id"`
 	Owner       User      `db:"owner"`
 }
@@ -98,7 +99,8 @@ func (user User) GetBoardsList() *[]BoardJSON {
 			users.updated_at "owner.updated_at"
     FROM
       boards JOIN users ON boards.user_id = users.id
-    WHERE boards.user_id = $1;`
+    WHERE boards.user_id = $1
+    ORDER BY boards.created_at DESC;`
 	db.DBX.Select(&boards, sql, user.Id)
 	return &boards
 }

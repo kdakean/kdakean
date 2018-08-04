@@ -28,6 +28,7 @@ export function updateBoard(boardParams) {
       })
   }
 }
+
 export function fetchBoards(options) {
   return function(dispatch) {
     boardService.getBoards(options)
@@ -35,6 +36,18 @@ export function fetchBoards(options) {
         dispatch({type: boardConstants.GET_BOARDS_SUCCESS, payload: response.data})
       })
       .catch((err) => {
+      })
+  }
+}
+
+export function deleteBoard(boardSlug) {
+  return function(dispatch) {
+    boardService.deleteBoard(boardSlug)
+      .then((response) => {
+        dispatch({type: boardConstants.DELETE_BOARDS_SUCCESS, payload: response.data});
+      })
+      .catch((err) => {
+        console.log(err)
       })
   }
 }

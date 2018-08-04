@@ -1,4 +1,5 @@
 import { boardConstants } from './../../_constants';
+import filter from 'lodash/filter';
 
 export default function reducer(state=[], action) {
     switch(action.type) {
@@ -22,6 +23,11 @@ export default function reducer(state=[], action) {
         })
       }
 
+      case (boardConstants.DELETE_BOARDS_SUCCESS): {
+        const {board_id} = action.payload;
+        console.log(board_id)
+        return filter(state, function(b) { return b.id !== board_id; })
+      }
     }
   return state;
 };

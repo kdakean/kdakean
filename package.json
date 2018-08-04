@@ -51,6 +51,7 @@
     "react-masonry-component": "^6.2.1",
     "react-moment": "^0.7.9",
     "react-redux": "^5.0.7",
+    "react-redux-sweetalert": "^1.0.2",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",

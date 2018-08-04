@@ -7,10 +7,12 @@ import {Link} from 'react-router-dom';
 import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import { toggleModalBoard } from './../../redux/actions/modal.actions.js';
+import { deleteBoard } from './../../redux/actions/board.actions.js';
+import { swal, close } from 'react-redux-sweetalert';
 
 @connect((store) => {
   return {};
-}, {toggleModalBoard})
+}, {toggleModalBoard, swal, close, deleteBoard})
 class Board extends Component {
   constructor(props) {
     super(props);
@@ -31,6 +33,24 @@ class Board extends Component {
     event.preventDefault();
     const {board} = this.props;
     this.props.toggleModalBoard(board.slug);
+  }
+
+  clickDeleteBoard = (event) => {
+    event.preventDefault();
+    const {board, swal, close, deleteBoard} = this.props;
+    swal({
+      title: 'Are you sure?',
+      text: 'Delete board "' + board.name + '"',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No',
+      confirmButtonColor: 'red',
+      onConfirm: function() {
+        console.log('I in')
+        deleteBoard(board.slug);
+        close();
+      }
+    })
   }
 
   dropdownOptions() {
@@ -56,7 +76,7 @@ class Board extends Component {
 
           {
             currentUser.id == Owner.id &&
-            <DropdownItem className="text-danger btn-sm">
+            <DropdownItem onClick={this.clickDeleteBoard} className="text-danger btn-sm">
               <FontAwesomeIcon icon="trash-alt" />
               <span className="pl-1">
                 Delete
@@ -91,7 +111,7 @@ class Board extends Component {
                 <div className="stats">
                   <FontAwesomeIcon icon="tasks" />
                   <span className="pl-1">
-                    {board.total_tasks}
+                    {board.tasks_count}
                   </span>
                 </div>
                 <div className="stats">
