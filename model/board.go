@@ -125,3 +125,10 @@ func (user User) GetBoard(slug string) *BoardJSON {
 
 	return &board
 }
+
+func (user User) DeleteBoard(slug string) int {
+	var id int
+	db.DBX.Get(&id, "SELECT boards.id FROM boards WHERE boards.slug = $1", slug)
+	db.DBX.Exec("DELETE FROM boards WHERE boards.slug = $1", slug)
+	return id
+}
