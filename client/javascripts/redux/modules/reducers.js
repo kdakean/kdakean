@@ -5,12 +5,14 @@ import { reducer as sweetalert } from 'react-redux-sweetalert';
 
 import authentication from './authentication';
 import boardReducers from './board_reducers';
+import boardsReducers from './boards_reducers';
 import modalReducers from './modal_reducers';
 
 export const reducers = {
   sweetalert,
   authentication,
   boardReducers,
+  boardsReducers,
   modalReducers,
   form: formReducer,
 };

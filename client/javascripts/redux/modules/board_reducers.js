@@ -1,12 +1,16 @@
-import boardsList from './board/boardsList';
-import boardDetail from './board/boardDetail';
+import { boardConstants } from './../_constants';
 
 export default function reducer(state={
-    boardsList: [],
-    boardDetail: {},
+    board: {},
   }, action) {
-    return {
-      ...state,
-      boardsList: boardsList(state.boardsList, action),
+    switch(action.type) {
+      case (boardConstants.GET_BOARD_DETAIL_SUCCESS):{
+        const {board} = action.payload;
+        return {
+          ...state,
+          board: board
+        }
+      }
     }
+  return state;
 };
