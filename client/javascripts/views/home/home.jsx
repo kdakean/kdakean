@@ -10,7 +10,7 @@ const masonryOptions = {
 
 @connect((store) => {
   return {
-    ...store.boardReducers
+    ...store.boardsReducers
   };
 }, { fetchBoards })
 class Home extends Component {
@@ -19,8 +19,8 @@ class Home extends Component {
   }
 
   render() {
-    const {boardsList} = this.props;
-    const boardsEl = boardsList.map(board =>
+    const {list} = this.props;
+    const boardsEl = list.map(board =>
       <Col xs="12" sm="6" md="4" lg="3" key={board.id}>
         <Board board={board} key={board.id}></Board>
       </Col>

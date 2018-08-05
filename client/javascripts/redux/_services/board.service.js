@@ -8,8 +8,8 @@ export const boardService = {
   deleteBoard
 };
 
-function getBoard(id, options) {
-  return axios.get(API_BASE + "/boards/" + id,
+function getBoard(slug, options) {
+  return axios.get(API_BASE + "/boards/" + slug,
     {params: { ...options }});
 }
 
@@ -27,6 +27,6 @@ function updateBoard(boardParams) {
                     boardParams)
 }
 
-function deleteBoard(id) {
-  return axios.delete(API_BASE + '/boards/' + id)
+function deleteBoard(slug) {
+  return axios.delete(API_BASE + '/boards/' + slug)
 }
